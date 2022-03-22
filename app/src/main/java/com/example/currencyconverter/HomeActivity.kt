@@ -52,6 +52,5 @@ class HomeActivity : AppBaseActivity() {
     private fun totalExchangeRate(amount: Int) {
         Log.d(TAG, "totalExchangeRate: $amount")
 
-
     }
 }
