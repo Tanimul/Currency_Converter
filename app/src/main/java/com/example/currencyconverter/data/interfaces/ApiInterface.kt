@@ -8,7 +8,7 @@ import retrofit2.http.Query
 
 
 interface ApiInterface {
-    @GET("latest.json?app_id={app_id}")
-    suspend fun getExchangeRate(@Path("app_id") app_id: String): Response<CurrencyItem>
+    @GET("latest.json")
+    suspend fun getExchangeRate(@Query("app_id") app_id: String): Response<CurrencyItem>
 
 }

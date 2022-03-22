@@ -17,7 +17,10 @@ class CurrencyViewModel : ViewModel() {
         viewModelScope.launch(Dispatchers.IO) {
 
             if (repository.getExchangeList(appInfo).body()?.rates != null) {
-                Log.d("fabniwfire", "getListCoroutine: " + repository.getExchangeList(appInfo).body())
+                Log.d(
+                    "fabniwfire",
+                    "getListCoroutine: " + repository.getExchangeList(appInfo).body()
+                )
                 allExchangeList.postValue(repository.getExchangeList(appInfo).body()?.rates)
             }
 

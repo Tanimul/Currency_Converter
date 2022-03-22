@@ -39,14 +39,14 @@ class HomeActivity : AppBaseActivity() {
     }
 
     private fun showAsList() {
-       // val appInfo: String = "a593611b88c9400093af1c8807fbfbab"
-      //  currencyViewModel.getExchangeList(appInfo)
-      //  Log.d(TAG, "showAsList: ")
-//        currencyViewModel.allExchangeList.observe(this) {
-//            Log.d(
-//                "ShowlistActivity", "Data Observed: "
-//            )
-//          }
+        val appInfo: String = "a593611b88c9400093af1c8807fbfbab"
+        currencyViewModel.getExchangeList(appInfo)
+        Log.d(TAG, "showAsList: ")
+        currencyViewModel.allExchangeList.observe(this) {
+            Log.d(
+                TAG, "Data Observed: $it -> " + it.BDT
+            )
+        }
     }
 
     private fun totalExchangeRate(amount: Int) {
