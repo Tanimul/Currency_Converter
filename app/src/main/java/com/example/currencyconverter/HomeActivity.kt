@@ -28,7 +28,7 @@ class HomeActivity : AppBaseActivity() {
         )[CurrencyViewModel::class.java]
 
 
-        showAsList()
+       // showAsList()
 
         binding.btnConvert.setOnClickListener {
             if (!TextUtils.isEmpty(binding.tvAmountValue.text.toString())) {
@@ -44,7 +44,7 @@ class HomeActivity : AppBaseActivity() {
         Log.d(TAG, "showAsList: ")
         currencyViewModel.allExchangeList.observe(this) {
             Log.d(
-                TAG, "Data Observed: $it -> " + it.BDT
+                TAG, "Data Observed: $it -> " + it?.BDT
             )
         }
     }

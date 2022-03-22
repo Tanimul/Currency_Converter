@@ -11,7 +11,7 @@ import kotlinx.coroutines.launch
 
 class CurrencyViewModel : ViewModel() {
     private val repository: CurrencyRepository = CurrencyRepository()
-    val allExchangeList = MutableLiveData<Rates>()
+    val allExchangeList = MutableLiveData<Rates?>()
 
     fun getExchangeList(appInfo: String) {
         viewModelScope.launch(Dispatchers.IO) {
