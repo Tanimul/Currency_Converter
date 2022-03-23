@@ -6,4 +6,11 @@
     <string name="from">From</string>
     <string name="to">To</string>
     <string name="convert">Convert</string>
+
+    <string-array name="spinnerItems">
+        <item>item1</item>
+        <item>item2</item>
+        <item>item3</item>
+        <item>item4</item>
+    </string-array>
 </resources>

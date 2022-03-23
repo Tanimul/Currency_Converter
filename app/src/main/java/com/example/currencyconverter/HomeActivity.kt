@@ -6,12 +6,10 @@ import android.util.Log
 import androidx.lifecycle.ViewModelProvider
 import com.example.currencyconverter.data.model.Rates
 import com.example.currencyconverter.databinding.ActivityHomeBinding
-import com.example.currencyconverter.utils.toast
 import com.example.currencyconverter.viewmodel.CurrencyViewModel
 import com.google.gson.Gson
 import java.text.SimpleDateFormat
 import java.util.*
-import kotlin.math.log
 
 class HomeActivity : AppBaseActivity() {
     private val TAG = "HomeActivity"
@@ -38,6 +36,9 @@ class HomeActivity : AppBaseActivity() {
         )[CurrencyViewModel::class.java]
 
 
+        //  Log.d("locale", Currency.getInstance("BDT").displayName)
+        Log.d("locale", Currency.getAvailableCurrencies().toString())
+
         //showAsList()
         observeList()
 
@@ -48,6 +49,7 @@ class HomeActivity : AppBaseActivity() {
 
         }
     }
+
 
     private fun observeList() {
         currencyViewModel.currencyListItem.observe(this) {
@@ -87,7 +89,11 @@ class HomeActivity : AppBaseActivity() {
     }
 
     private fun totalExchangeRate(amount: Int) {
+
         Log.d(TAG, "totalExchangeRate: $amount")
+//        Log.d(TAG, "totalExchangeRate: " + binding.countryCodePickerFrom.selectedCountryCode)
+//        Log.d(TAG, "totalExchangeRate: " + binding.countryCodePickerTo.selectedCountryCode)
+
 
     }
 }
