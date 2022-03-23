@@ -1,29 +1,59 @@
 package com.example.currencyconverter.viewmodel
 
+import android.app.Application
 import android.util.Log
+import androidx.lifecycle.AndroidViewModel
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.example.currencyconverter.data.database.CurrencyDatabase
+import com.example.currencyconverter.data.model.CurrencyList
 import com.example.currencyconverter.data.model.Rates
 import com.example.currencyconverter.data.repository.CurrencyRepository
+import com.example.currencyconverter.data.repository.CurrencyRepositoryOffline
+import com.google.gson.Gson
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
-class CurrencyViewModel : ViewModel() {
+class CurrencyViewModel(application: Application) : AndroidViewModel(application) {
+
     private val repository: CurrencyRepository = CurrencyRepository()
     val allExchangeList = MutableLiveData<Rates?>()
+    val repositoryStoreOffline: CurrencyRepositoryOffline
+    var currencyListItem: LiveData<CurrencyList>
+
+    init {
+        val currencyDao = CurrencyDatabase.getDatabase(application).currencyDao()
+        repositoryStoreOffline = CurrencyRepositoryOffline(currencyDao)
+        currencyListItem = repositoryStoreOffline.list
+    }
+
+    private fun addCurrencyList(currencyListItem: CurrencyList) =
+        viewModelScope.launch(Dispatchers.IO) {
+            repositoryStoreOffline.addCurrencyList(currencyListItem)
+        }
 
     fun getExchangeList(appInfo: String) {
         viewModelScope.launch(Dispatchers.IO) {
 
             if (repository.getExchangeList(appInfo).body()?.rates != null) {
                 Log.d(
-                    "fabniwfire",
+                    "TAG",
                     "getListCoroutine: " + repository.getExchangeList(appInfo).body()
                 )
                 allExchangeList.postValue(repository.getExchangeList(appInfo).body()?.rates)
+                val currencyList = CurrencyList(
+                    101,
+                    System.currentTimeMillis(),
+                    Gson().toJson(repository.getExchangeList(appInfo).body()?.rates)
+                )
+
+                addCurrencyList(currencyList)
+
             }
 
         }
     }
+
+
 }

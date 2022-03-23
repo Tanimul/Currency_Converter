@@ -4,9 +4,11 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import com.example.currencyconverter.data.model.CurrencyListItem
+import androidx.room.TypeConverters
+import com.example.currencyconverter.data.model.CurrencyList
 
-@Database(entities = [CurrencyListItem::class], version = 1, exportSchema = false)
+
+@Database(entities = [CurrencyList::class], version = 2, exportSchema = false)
 abstract class CurrencyDatabase : RoomDatabase() {
     abstract fun currencyDao(): CurrencyDao
 
