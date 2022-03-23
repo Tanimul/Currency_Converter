@@ -59,7 +59,7 @@
             android:background="@drawable/background_edittext"
             android:hint="@string/amount"
             android:inputType="number"
-            android:padding="10dp"
+            android:padding="15dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_amount" />
 
@@ -92,6 +92,7 @@
         </LinearLayout>
         <!--        app:ccp_customMasterCountries="AED,AFN,ALL,AMD,ANG,AOA,ARS,AUD,AWG,AZN,BAM,BBD,BDT,BGN,BHD,BIF,BMD,BND,BOB,BRL,BSD,BTC,BTN,BWP,BYN,BZD,CAD,CDF,CHF,CLF,CLP,CNH,CNY,COP,CRC,CUC,CUP,CVE,CZK,DJF,DKK,DOP,DZD,EGP,ERN,ETB,EUR,FJD,FKP,GBP,GEL,GGP,GHS,GIP,GMD,GNF,GTQ,GYD,HKD,HNL,HRK,HTG,HUF,IDR,ILS,IMP,INR,IQD,IRR,ISK,JEP,JMD,JOD,JPY,KES,KGS,KHR,KMF,KPW,KRW,KWD,KYD,KZT,LAK,LBP,LKR,LRD,LSL,LYD,MAD,MDL,MGA,MKD,MMK,MNT,MOP,MRU,MUR,MVR,MWK,MXN,MYR,MZN,NAD,NGN,NIO,NOK,NPR,NZD,OMR,PAB,PEN,PGK,PHP,PKR,PLN,PYG,QAR,RON,RSD,RUB,RWF,SAR,SBD,SCR,SDG,-->
         <!--        SEK,SGD,SHP,SLL,SOS,SRD,SSP,STD,STN,SVC,SYP,SZL,THB,TJS,TMT,TND,TOP,TRY,TTD,TWD,TZS,UAH,UGX,USD,UYU,UZS,VES,VUV,WST,XAF,XAG,XAU,XCD,XDR,XOF,XPD,XPF,XPT,YER,ZAR,ZMW,ZWL"-->
+
         <!--        <com.hbb20.CountryCodePicker-->
         <!--            android:id="@+id/countryCodePicker_from"-->
         <!--            android:layout_width="0dp"-->
@@ -106,26 +107,35 @@
         <!--            app:ccp_showPhoneCode="false"-->
         <!--            app:layout_constraintEnd_toStartOf="@id/iv_exchange"-->
         <!--            app:layout_constraintStart_toStartOf="parent"-->
-        <!--            app:layout_constraintTop_toBottomOf="@id/layout_liner01" />-->
+        <!--            app:layout_constraintTop_toBottomOf="@id/layout_liner01"-->
 
-        <Spinner
-            android:id="@+id/spinner_from"
+        <!--            />-->
+        <LinearLayout
+            android:id="@+id/linearLayout1"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_margin="20dp"
             android:background="@drawable/background_edittext"
-            android:drawSelectorOnTop="true"
-            android:entries="@array/spinnerItems"
-            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="15dp"
             app:layout_constraintEnd_toStartOf="@id/iv_exchange"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/layout_liner01" />
+            app:layout_constraintTop_toBottomOf="@id/layout_liner01">
+
+            <Spinner
+                android:id="@+id/spFromCurrency"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:entries="@array/currency_codes" />
+        </LinearLayout>
+
 
         <ImageView
             android:id="@+id/iv_exchange"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_marginHorizontal="10dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="30dp"
             android:padding="10dp"
             android:src="@drawable/ic_exchange"
             app:layout_constraintEnd_toEndOf="parent"
@@ -143,24 +153,31 @@
         <!--            android:gravity="center"-->
         <!--            android:paddingHorizontal="10dp"-->
         <!--            app:ccp_autoDetectCountry="false"-->
-        <!--            app:ccp_customMasterCountries="US,IN,NZ,BD,PL,RO,ZW"-->
         <!--            app:ccp_defaultNameCode="US"-->
         <!--            app:ccp_showNameCode="true"-->
         <!--            app:ccp_showPhoneCode="false"-->
         <!--            app:layout_constraintEnd_toEndOf="parent"-->
         <!--            app:layout_constraintStart_toEndOf="@id/iv_exchange"-->
         <!--            app:layout_constraintTop_toBottomOf="@id/layout_liner01" />-->
-        <Spinner
-            android:id="@+id/spinner_to"
+        <LinearLayout
+            android:id="@+id/linearLayout2"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_margin="20dp"
             android:background="@drawable/background_edittext"
-            android:drawSelectorOnTop="true"
-            android:entries="@array/spinnerItems"
-            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="15dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/iv_exchange"
-            app:layout_constraintTop_toBottomOf="@id/layout_liner01" />
+            app:layout_constraintTop_toBottomOf="@id/layout_liner01">
+
+            <Spinner
+                android:id="@+id/spToCurrency"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:entries="@array/currency_codes" />
+
+        </LinearLayout>
 
         <Button
             android:id="@+id/btn_convert"
@@ -173,7 +190,8 @@
             android:textAllCaps="true"
             app:backgroundTint="@null"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/spinner_to" />
+            app:layout_constraintTop_toBottomOf="@id/linearLayout2" />
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

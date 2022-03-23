@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Currency Converter</string>
     <string name="exchange_rate">Exchange Rate</string>
-    <string name="_0">$0</string>
+    <string name="_0">0</string>
     <string name="amount">Amount</string>
     <string name="from">From</string>
     <string name="to">To</string>
