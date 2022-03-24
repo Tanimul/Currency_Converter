@@ -1,4 +1,4 @@
-package com.example.currencyconverter.data.model
+package org.primeit.currencyconverter.data.model
 
 import com.google.gson.annotations.SerializedName
 

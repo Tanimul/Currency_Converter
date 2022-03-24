@@ -1,10 +1,9 @@
-package com.example.currencyconverter.data.repository
+package org.primeit.currencyconverter.data.repository
 
 import android.util.Log
 import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
-import com.example.currencyconverter.data.database.CurrencyDao
-import com.example.currencyconverter.data.model.CurrencyList
+import org.primeit.currencyconverter.data.database.CurrencyDao
+import org.primeit.currencyconverter.data.model.CurrencyList
 
 class CurrencyRepositoryOffline(private val currencyDao: CurrencyDao) {
     private val TAG: String = "CurrencyListRep: Online"

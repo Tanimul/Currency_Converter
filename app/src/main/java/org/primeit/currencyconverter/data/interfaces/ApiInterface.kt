@@ -1,9 +1,8 @@
-package com.example.currencyconverter.data.interfaces
+package org.primeit.currencyconverter.data.interfaces
 
-import com.example.currencyconverter.data.model.CurrencyItem
+import org.primeit.currencyconverter.data.model.CurrencyItem
 import retrofit2.Response
 import retrofit2.http.GET
-import retrofit2.http.Path
 import retrofit2.http.Query
 
 

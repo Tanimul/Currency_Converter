@@ -1,4 +1,4 @@
-package com.example.currencyconverter.utils
+package org.primeit.currencyconverter.utils
 
 import android.content.Context
 import android.widget.Toast

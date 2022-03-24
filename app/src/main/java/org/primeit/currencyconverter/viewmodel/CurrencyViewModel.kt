@@ -1,4 +1,4 @@
-package com.example.currencyconverter.viewmodel
+package org.primeit.currencyconverter.viewmodel
 
 import android.app.Application
 import android.util.Log
@@ -6,11 +6,11 @@ import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
-import com.example.currencyconverter.data.database.CurrencyDatabase
-import com.example.currencyconverter.data.model.CurrencyList
-import com.example.currencyconverter.data.model.Rates
-import com.example.currencyconverter.data.repository.CurrencyRepository
-import com.example.currencyconverter.data.repository.CurrencyRepositoryOffline
+import org.primeit.currencyconverter.data.database.CurrencyDatabase
+import org.primeit.currencyconverter.data.model.CurrencyList
+import org.primeit.currencyconverter.data.model.Rates
+import org.primeit.currencyconverter.data.repository.CurrencyRepository
+import org.primeit.currencyconverter.data.repository.CurrencyRepositoryOffline
 import com.google.gson.Gson
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch

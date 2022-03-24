@@ -1,11 +1,11 @@
-package com.example.currencyconverter.ui
+package org.primeit.currencyconverter.ui
 
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.example.currencyconverter.R
-import com.example.currencyconverter.databinding.ActivityAboutAppBinding
+import org.primeit.currencyconverter.R
+import org.primeit.currencyconverter.databinding.ActivityAboutAppBinding
 
 class AboutAppActivity : AppCompatActivity() {
 

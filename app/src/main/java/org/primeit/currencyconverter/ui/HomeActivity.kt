@@ -1,4 +1,4 @@
-package com.example.currencyconverter.ui
+package org.primeit.currencyconverter.ui
 
 
 import android.content.Intent
@@ -9,11 +9,11 @@ import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
 import androidx.lifecycle.ViewModelProvider
-import com.example.currencyconverter.AppBaseActivity
-import com.example.currencyconverter.R
-import com.example.currencyconverter.data.model.Rates
-import com.example.currencyconverter.databinding.ActivityHomeBinding
-import com.example.currencyconverter.viewmodel.CurrencyViewModel
+import org.primeit.currencyconverter.AppBaseActivity
+import org.primeit.currencyconverter.R
+import org.primeit.currencyconverter.data.model.Rates
+import org.primeit.currencyconverter.databinding.ActivityHomeBinding
+import org.primeit.currencyconverter.viewmodel.CurrencyViewModel
 import com.google.gson.Gson
 import java.text.SimpleDateFormat
 import java.util.*

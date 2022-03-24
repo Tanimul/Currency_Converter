@@ -1,4 +1,4 @@
-package com.example.currencyconverter
+package org.primeit.currencyconverter
 
 import android.app.Dialog
 import android.graphics.drawable.ColorDrawable
@@ -7,6 +7,7 @@ import android.util.Log
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
+import org.primeit.currencyconverter.R
 
 open class AppBaseActivity : AppCompatActivity() {
 
@@ -14,13 +15,6 @@ open class AppBaseActivity : AppCompatActivity() {
     private var progressDialog: Dialog? = null
     fun setToolbarWithoutBackButton(mToolbar: Toolbar) {
         setSupportActionBar(mToolbar)
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when (item.itemId) {
-            android.R.id.home -> onBackPressed()
-        }
-        return super.onOptionsItemSelected(item)
     }
 
     override fun onStart() {

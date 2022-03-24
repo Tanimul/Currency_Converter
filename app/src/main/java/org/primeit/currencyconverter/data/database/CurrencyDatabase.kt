@@ -1,11 +1,10 @@
-package com.example.currencyconverter.data.database
+package org.primeit.currencyconverter.data.database
 
 import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import androidx.room.TypeConverters
-import com.example.currencyconverter.data.model.CurrencyList
+import org.primeit.currencyconverter.data.model.CurrencyList
 
 
 @Database(entities = [CurrencyList::class], version = 2, exportSchema = false)

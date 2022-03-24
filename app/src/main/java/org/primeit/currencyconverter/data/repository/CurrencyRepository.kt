@@ -1,9 +1,9 @@
-package com.example.currencyconverter.data.repository
+package org.primeit.currencyconverter.data.repository
 
 import android.util.Log
-import com.example.currencyconverter.data.interfaces.ApiInterface
-import com.example.currencyconverter.data.model.CurrencyItem
-import com.example.currencyconverter.network.ApiClient
+import org.primeit.currencyconverter.data.interfaces.ApiInterface
+import org.primeit.currencyconverter.data.model.CurrencyItem
+import org.primeit.currencyconverter.network.ApiClient
 import retrofit2.Response
 
 class CurrencyRepository {

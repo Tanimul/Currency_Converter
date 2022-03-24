@@ -1,7 +1,6 @@
-package com.example.currencyconverter.network
+package org.primeit.currencyconverter.network
 
-import android.util.Log
-import com.example.currencyconverter.data.interfaces.ApiInterface
+import org.primeit.currencyconverter.data.interfaces.ApiInterface
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
