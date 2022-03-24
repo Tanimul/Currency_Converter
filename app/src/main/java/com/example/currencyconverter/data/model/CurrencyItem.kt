@@ -7,5 +7,5 @@ data class CurrencyItem(
     @SerializedName("license"    ) var license    : String? = null,
     @SerializedName("timestamp"  ) var timestamp  : Int?    = null,
     @SerializedName("base"       ) var base       : String? = null,
-    @SerializedName("rates"      ) var rates      : Rates?  = Rates()
+    @SerializedName("rates"      ) var rates      : Rates  = Rates()
 )
