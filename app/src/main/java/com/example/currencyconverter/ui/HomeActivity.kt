@@ -1,10 +1,16 @@
-package com.example.currencyconverter
+package com.example.currencyconverter.ui
 
 
+import android.content.Intent
 import android.os.Bundle
 import android.text.TextUtils
 import android.util.Log
+import android.view.Menu
+import android.view.MenuInflater
+import android.view.MenuItem
 import androidx.lifecycle.ViewModelProvider
+import com.example.currencyconverter.AppBaseActivity
+import com.example.currencyconverter.R
 import com.example.currencyconverter.data.model.Rates
 import com.example.currencyconverter.databinding.ActivityHomeBinding
 import com.example.currencyconverter.viewmodel.CurrencyViewModel
@@ -13,16 +19,17 @@ import java.text.SimpleDateFormat
 import java.util.*
 
 
-
 class HomeActivity : AppBaseActivity() {
     private val TAG = "HomeActivity"
     private lateinit var binding: ActivityHomeBinding
     private lateinit var currencyViewModel: CurrencyViewModel
-   /// private lateinit var students: Rates
+
+    /// private lateinit var students: Rates
     private val dateFormat = SimpleDateFormat("dd-MMM-yyyy", Locale.getDefault())
     private lateinit var toDaysCalendar: Calendar
     private var dayOfToDay: Long = 0L
-//    val hMap: HashMap<String, String> = HashMap<String, String>()
+
+    //    val hMap: HashMap<String, String> = HashMap<String, String>()
 //    val listCountryName: MutableList<String> = mutableListOf()
     private var exchangeRate: Double? = 0.0
     private lateinit var rates: Rates
@@ -466,5 +473,22 @@ class HomeActivity : AppBaseActivity() {
         "ZMW" -> rates.ZMW
         "ZWL" -> rates.ZWL?.toDouble()
         else -> 0.0
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        val inflater: MenuInflater = menuInflater
+        inflater.inflate(R.menu.menu_about, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        // Handle item selection
+        return when (item.itemId) {
+            R.id.nav_about -> {
+                startActivity(Intent(this, AboutAppActivity::class.java))
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
+        }
     }
 }

@@ -6,11 +6,10 @@
     <string name="from">From</string>
     <string name="to">To</string>
     <string name="convert">Convert</string>
+    <string name="exchange_amount">Exchange Amount</string>
+    <string name="about_app">About App</string>
+    <string name="privacy_policy">Privacy Policy</string>
+    <string name="about_app_text">Live currency converter and easy using a conversion of many foreign currencies.Do you search for a real-time currency converter with a calculator function? Then Currency Converter is for you. Currency Converter is a small currency converter with a focus on the essential: Converting 155 currency from over 193 countries - offline, online, and ad-free - and even for free! It provides accurate exchange rate information for all currencies in the world. It is a simple and easy-to-use currency &amp; exchange rate converter ever you use such an app.</string>
+    <string name="privacy_policy_link">https://sites.google.com/view/prime-it-currency-converter</string>
 
-    <string-array name="spinnerItems">
-        <item>item1</item>
-        <item>item2</item>
-        <item>item3</item>
-        <item>item4</item>
-    </string-array>
 </resources>
