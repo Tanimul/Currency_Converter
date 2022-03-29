@@ -4,9 +4,10 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Currency_Converter/app/src/main/res/drawable/background_splash.xml" value="0.196" />
-        <entry key="..\:/Currency_Converter/app/src/main/res/layout/activity_home.xml" value="0.25" />
-        <entry key="..\:/Currency_Converter/app/src/main/res/layout/dialog_searchable_spinner.xml" value="0.16" />
+        <entry key="..\:/Currency_Converter/app/src/main/res/layout/activity_home.xml" value="0.33" />
+        <entry key="..\:/Currency_Converter/app/src/main/res/layout/dialog_searchable_spinner.xml" value="0.22" />
         <entry key="..\:/Currency_Converter/app/src/main/res/layout/layout_progress_dialog.xml" value="0.18802083333333333" />
+        <entry key="..\:/Currency_Converter/app/src/main/res/layout/layout_toolbar.xml" value="0.1" />
         <entry key="..\:/Kotlin/Android Kotlin/CurrencyConverter/app/src/main/res/drawable/background_button.xml" value="0.2615" />
         <entry key="..\:/Kotlin/Android Kotlin/CurrencyConverter/app/src/main/res/drawable/background_edittext.xml" value="0.2615" />
         <entry key="..\:/Kotlin/Android Kotlin/CurrencyConverter/app/src/main/res/layout/activity_home.xml" value="0.25" />
