@@ -34,6 +34,7 @@ class HomeActivity : AppBaseActivity() {
     private lateinit var toDaysCalendar: Calendar
     private var dayOfToDay: Long = 0L
     private var exchangeRate: Double? = 0.0
+    private var exchangeRateInit: Double? = 0.0
     private lateinit var rates: Rates
     private lateinit var dialog: Dialog
     private val currencyArrayList =
@@ -223,8 +224,8 @@ class HomeActivity : AppBaseActivity() {
 
         dialog = Dialog(this, R.style.MyAlertDialogTheme)
         dialog.setContentView(R.layout.dialog_searchable_spinner)
-        currencyList = dialog.findViewById<ListView>(R.id.lv_currencyList)
-        currencySearch = dialog.findViewById<EditText>(R.id.et_currency)
+        currencyList = dialog.findViewById(R.id.lv_currencyList)
+        currencySearch = dialog.findViewById(R.id.et_currency)
 
         currencyViewModel = ViewModelProvider(
             this, ViewModelProvider.AndroidViewModelFactory.getInstance(application)
@@ -388,6 +389,19 @@ class HomeActivity : AppBaseActivity() {
         binding.tvExchangeFrom.text = fromString
         binding.tvExchangeTo.text = toString
 
+        exchangeRate(fromString, toString)
+
+    }
+
+    private fun exchangeRate(fromString: String, toString: String) {
+        val fromValue: Double? = getRateForCurrency(fromString, rates)
+        val toValue: Double? = getRateForCurrency(toString, rates)
+
+        exchangeRateInit = ((1.div(fromValue!!)).times(toValue!!))
+        binding.tvExchangeRateFrom.visibility = View.VISIBLE
+        val rateText = "1 $fromString = " +
+                String.format("%.3f", exchangeRateInit).toDouble().toString() + " $toString"
+        binding.tvExchangeRateFrom.text = rateText
     }
 
     private fun getRateForCurrency(currency: String, rates: Rates): Double? = when (currency) {
