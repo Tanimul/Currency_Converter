@@ -14,16 +14,53 @@
             android:id="@+id/toolbar_layout"
             layout="@layout/layout_toolbar" />
 
+        <LinearLayout
+            android:id="@+id/layout_liner02"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingVertical="20dp"
+            android:visibility="invisible"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/toolbar_layout">
+
+            <TextView
+                android:id="@+id/tv_exchangeFrom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/exchange"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/iv_exchangeArrow"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="10dp"
+                android:src="@drawable/ic_arrow" />
+
+            <TextView
+                android:id="@+id/tv_exchangeTo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/exchange"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
         <TextView
             android:id="@+id/tv_exchangeRate"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="30sp"
+            android:layout_marginTop="20dp"
             android:gravity="center"
             android:text="@string/exchange_rate"
             android:textSize="18sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/toolbar_layout" />
+            app:layout_constraintTop_toBottomOf="@id/layout_liner02" />
 
         <TextView
             android:id="@+id/tv_exchangeRateValue"
@@ -34,7 +71,6 @@
             android:text="@string/_0"
             android:textSize="30sp"
             android:textStyle="bold"
-
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_exchangeRate" />
 
@@ -110,7 +146,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/background_edittext"
-                android:drawableEnd="@drawable/ic_arrow"
+                android:drawableEnd="@drawable/ic_arrow_down"
                 android:gravity="center_vertical"
                 android:hint="Select"
                 android:padding="12dp" />
@@ -148,7 +184,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/background_edittext"
-                android:drawableEnd="@drawable/ic_arrow"
+                android:drawableEnd="@drawable/ic_arrow_down"
                 android:gravity="center_vertical"
                 android:hint="Select"
                 android:padding="12dp" />

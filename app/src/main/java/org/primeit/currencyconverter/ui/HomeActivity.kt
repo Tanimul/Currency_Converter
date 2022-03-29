@@ -11,6 +11,7 @@ import android.util.Log
 import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
+import android.view.View
 import android.widget.ArrayAdapter
 import android.widget.EditText
 import android.widget.ListView
@@ -208,6 +209,7 @@ class HomeActivity : AppBaseActivity() {
         )
     private lateinit var currencyList: ListView
     private lateinit var currencySearch: EditText
+    private var temp: String = ""
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setTheme(R.style.Theme_CurrencyConverter)
@@ -252,6 +254,23 @@ class HomeActivity : AppBaseActivity() {
 
         binding.tvSelectTo.setOnClickListener {
             initSearchDialogTo()
+        }
+
+        binding.ivExchange.setOnClickListener {
+            temp = binding.tvSelectFrom.text.toString()
+            binding.tvSelectFrom.text = binding.tvSelectTo.text.toString()
+            binding.tvSelectTo.text = temp
+            if (!(TextUtils.isEmpty(binding.tvAmountValue.text.toString())
+                        || binding.tvSelectFrom.text.toString().isEmpty()
+                        || binding.tvSelectTo.text.toString().isEmpty()
+                        )
+            ) {
+                totalExchangeRate(
+                    binding.tvAmountValue.text.toString().toDouble(),
+                    binding.tvSelectFrom.text.toString(),
+                    binding.tvSelectTo.text.toString(),
+                )
+            }
         }
 
     }
@@ -363,6 +382,11 @@ class HomeActivity : AppBaseActivity() {
         Log.d(TAG, "totalExchangeRate: $fromValue")
         Log.d(TAG, "totalExchangeRate: $toValue")
         Log.d(TAG, "totalExchangeRate: $exchangeRate")
+
+
+        binding.layoutLiner02.visibility = View.VISIBLE
+        binding.tvExchangeFrom.text = fromString
+        binding.tvExchangeTo.text = toString
 
     }
 
